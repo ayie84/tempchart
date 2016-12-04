@@ -7,7 +7,7 @@
 -bash script with cronjob(to get the temperature and store it into mysql every 1 hour)</br>
 
 #bash script
-<h7>#!/bin/bash</h7>
+<h7>#!/bin/bash</h7></br>
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)</br>
 cpuTemp1=$(($cpuTemp0/1000))</br>
 cpuTemp2=$(($cpuTemp0/100))</br>
