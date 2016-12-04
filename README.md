@@ -8,19 +8,17 @@
 
 #bash script
 <h7>#!/bin/bash</h7>
-cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
-cpuTemp1=$(($cpuTemp0/1000))
-cpuTemp2=$(($cpuTemp0/100))
-cpuTempM=$(($cpuTemp2 % $cpuTemp1))
+cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)</br>
+cpuTemp1=$(($cpuTemp0/1000))</br>
+cpuTemp2=$(($cpuTemp0/100))</br>
+cpuTempM=$(($cpuTemp2 % $cpuTemp1))</br>
 
-gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)
-gpuTemp0=${gpuTemp0//\'/º}
-gpuTemp0=${gpuTemp0//temp=/}
+gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)</br>
+gpuTemp0=${gpuTemp0//\'/º}</br>
+gpuTemp0=${gpuTemp0//temp=/}</br>
 
-echo CPU Temp: $cpuTemp1"."$cpuTempM"ºC"
+echo CPU Temp: $cpuTemp1"."$cpuTempM"ºC"</br>
 
-#echo Acpu = $cpuTemp1"."$cpuTempM"c"
-
-<h7>##ref : http://stackoverflow.com/questions/17997558/bash-script-to-insert-values-in-mysql</h7>
-echo "INSERT INTO temp_log (cpu) VALUES ($cpuTemp1.$cpuTempM);" | mysql -u[login] -p[password] [databasename];
+<h7>##ref : http://stackoverflow.com/questions/17997558/bash-script-to-insert-values-in-mysql</h7></br>
+echo "INSERT INTO temp_log (cpu) VALUES ($cpuTemp1.$cpuTempM);" | mysql -u[login] -p[password] [databasename];</br>
 
