@@ -7,5 +7,5 @@
 -bash script with cronjob(to get the temperature and store it into mysql every 1 hour)</br>
 
 #bash script
-#!/bin/bash
+<h7>#!/bin/bash</h7>
 
