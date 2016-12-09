@@ -8,14 +8,12 @@
 
 #bash script
 <h7>#!/bin/bash</h7></br>
-cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)</br>
-cpuTemp1=$(($cpuTemp0/1000))</br>
-cpuTemp2=$(($cpuTemp0/100))</br>
-cpuTempM=$(($cpuTemp2 % $cpuTemp1))</br>
+cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
+cpuTemp1=$(($cpuTemp0/1000))
+cpuTemp2=$(($cpuTemp0/100))
+cpuTempM=$(($cpuTemp2 % $cpuTemp1))
 
-gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)</br>
-gpuTemp0=${gpuTemp0//\'/º}</br>
-gpuTemp0=${gpuTemp0//temp=/}</br>
+gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)
 
 echo CPU Temp: $cpuTemp1"."$cpuTempM"ºC"</br>
 
